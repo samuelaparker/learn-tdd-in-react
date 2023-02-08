@@ -9,8 +9,9 @@ export default function App() {
 
   const handleSend = (newMessage) => {
     setMessages([
+      newMessage,
       ...messages,
-      newMessage
+
     ])
   }
 
