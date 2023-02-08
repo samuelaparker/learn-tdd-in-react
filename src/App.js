@@ -1,3 +1,23 @@
+
+import { useState } from 'react'
+import NewMessageForm from './NewMessageForm'
+import MessageList from './MessageList'
+
 export default function App() {
-  return null;
+
+  const [messages, setMessages] = useState([])
+
+  const handleSend = (newMessage) => {
+    setMessages([
+      ...messages,
+      newMessage
+    ])
+  }
+
+  return (
+    <>
+      <NewMessageForm onSend={handleSend} />
+      <MessageList data={messages} />
+    </>
+  )
 }
